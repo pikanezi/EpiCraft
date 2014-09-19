@@ -3,10 +3,10 @@ package db
 import (
 	"EpiCraft/restful/models"
 	"fmt"
-	mgo "gopkg.in/mgo.v2"
 	"github.com/pikanezi/tokauth"
-	"time"
+	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"time"
 )
 
 const (
@@ -44,7 +44,7 @@ func ExtendsPlayerAccountTTLByAccessToken(accessToken string, newDate time.Time)
 }
 
 // AuthorizeAccountByAccessToken checks that the account is authorized and returns the account found.
-func AuthorizeAccountByAccessToken(accessToken string) (*models.PlayerAccount, error){
+func AuthorizeAccountByAccessToken(accessToken string) (*models.PlayerAccount, error) {
 	refreshToken, err := tokauth.GetRefreshTokenFromAccessToken(accessToken)
 	if err != nil {
 		return nil, fmt.Errorf("invalid or expired access token")

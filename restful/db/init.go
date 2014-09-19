@@ -1,9 +1,9 @@
 package db
 
 import (
+	"github.com/pikanezi/tokauth"
 	mgo "gopkg.in/mgo.v2"
 	"time"
-	"github.com/pikanezi/tokauth"
 )
 
 const (

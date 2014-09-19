@@ -1,8 +1,8 @@
 package interceptors
 
 import (
-	"github.com/gocarina/pi"
 	"EpiCraft/restful/db"
+	"github.com/gocarina/pi"
 )
 
 const (
