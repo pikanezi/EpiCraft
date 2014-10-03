@@ -6,19 +6,20 @@ import (
 )
 
 var (
-	wordController *world.World
+	worldController *world.World
 )
 
 // GetWorld returns the only instance of the world.
 func GetWorld() *world.World {
-	return wordController
+	return worldController
 }
 
 // Loop is the main loop of the game.
 func Loop() {
-	worldController := world.NewWorld()
+	worldController = world.NewWorld()
 	for {
-		for _, entity := range worldController.Entities {
+		for _, entity := range worldController.Players {
+			entity.Play()
 		}
 		<-time.After(time.Millisecond * 33)
 	}

@@ -20,7 +20,7 @@ type Entity interface {
 
 // SimpleEntity is the simplest entity.
 type SimpleEntity struct {
-	ID     uint
+	ID     uint   `json:"idGame,omitempty" bson:"idGame"`
 	PosX   int    `json:"posX"`
 	PosY   int    `json:"posY"`
 	Type   Type   `json:"entityType,omitempty"`

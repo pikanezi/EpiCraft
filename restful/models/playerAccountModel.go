@@ -10,7 +10,7 @@ import (
 type PlayerAccount struct {
 	tokauth.Client `bson:",inline"`
 
-	Login      string       `bson:"_id" json:"login,omitempty"`
+	Login      string       `bson:"login" json:"login,omitempty"`
 	Password   string       `bson:"password" json:"password,omitempty"`
 	Characters []*Character `bson:"characters" json:"characters,omitempty"`
 }

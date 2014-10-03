@@ -32,6 +32,7 @@ func init() {
 	if err := accountCollection.EnsureIndex(index); err != nil {
 		panic(err)
 	}
+	tokauth.IDFieldName = "login"
 	tokauth.SetTokenExpiration(30 * time.Minute)
 	tokauth.SetAccessCollection(mongoSession.DB(databaseName).C(accessCollectionName))
 	tokauth.SetClientCollection(accountCollection)

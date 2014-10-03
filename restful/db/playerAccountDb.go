@@ -20,6 +20,7 @@ func CreatePlayerAccount(account *models.PlayerAccount) (*models.PlayerAccount, 
 	}
 	err := c(accountCollectionName).Insert(account)
 	if err != nil && err.(*mgo.LastError).Code == 11000 {
+		fmt.Println(err)
 		return nil, fmt.Errorf(`login [%s] already taken`, account.Login)
 	}
 	refreshToken, accessToken, err := tokauth.Register(account.Login)
